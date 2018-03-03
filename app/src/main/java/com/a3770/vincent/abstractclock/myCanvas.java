@@ -108,11 +108,6 @@ public class myCanvas extends View {
 
     private void drawSec(Canvas canvas) {
         paint.reset();
-        Paint pt = new Paint();
-        pt.setColor(rgb(255,255,255));
-        pt.setStyle(Paint.Style.FILL_AND_STROKE);
-        pt.setTextSize(100);
-        canvas.drawText(Integer.toString(sec), 300, 200, pt);
         getColour(sec);
         paint.setColor(rgb(red, green, blue));
         paint.setStrokeWidth(5);
