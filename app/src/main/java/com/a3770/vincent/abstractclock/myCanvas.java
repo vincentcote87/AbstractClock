@@ -5,6 +5,7 @@ import android.graphics.Canvas;
 //import android.graphics.Color;
 import android.graphics.Paint;
 //import android.graphics.Rect;
+import android.graphics.drawable.Drawable;
 import android.icu.util.Calendar;
 import android.util.AttributeSet;
 import android.view.View;
@@ -32,6 +33,7 @@ public class myCanvas extends View {
     int green;
     int blue;
 
+//    Drawable scale = ResourcesCompat.getDrawable(R.drawable.color_scale);
 
     public myCanvas(Context context) {
         super(context);
@@ -113,7 +115,7 @@ public class myCanvas extends View {
         paint.setStrokeWidth(5);
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
-        canvas.drawRect(2*barWidth, 100,3*barWidth, barHeight, paint);
+        canvas.drawRect(2*barWidth, 0,3*barWidth, barHeight, paint);
     }
 
     private void drawMin(Canvas canvas) {
@@ -123,7 +125,7 @@ public class myCanvas extends View {
         paint.setStrokeWidth(5);
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
-        canvas.drawRect(barWidth, 100, 2*barWidth, barHeight, paint);
+        canvas.drawRect(barWidth, 0, 2*barWidth, barHeight, paint);
     }
 
     private void drawHour(Canvas canvas) {
@@ -133,7 +135,7 @@ public class myCanvas extends View {
         paint.setStrokeWidth(5);
         paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
-        canvas.drawRect(0, 100, barWidth, barHeight, paint);
+        canvas.drawRect(0, 0, barWidth, barHeight, paint);
 
     }
 }
