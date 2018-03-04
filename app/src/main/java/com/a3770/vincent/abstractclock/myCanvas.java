@@ -10,6 +10,7 @@ import android.icu.util.Calendar;
 import android.util.AttributeSet;
 import android.view.View;
 
+import static android.graphics.Color.colorToHSV;
 import static android.graphics.Color.rgb;
 
 /**
@@ -20,6 +21,7 @@ public class myCanvas extends View {
 
     private boolean init = false;
     Paint paint;
+    Paint textPaint;
     int screenWidth;
     int screenHeight;
     int barWidth;
@@ -53,6 +55,11 @@ public class myCanvas extends View {
         screenHeight = getHeight();
         barWidth = (screenWidth) / 3;
         barHeight = (int)Math.round(screenHeight * 0.75);
+        textPaint = new Paint();
+        textPaint.setStyle(Paint.Style.FILL);
+        textPaint.setColor(rgb(255,255,255));
+        textPaint.setTextSize((int)Math.round(barWidth * 0.75));
+
         init = true;
     }
 
@@ -71,6 +78,7 @@ public class myCanvas extends View {
         drawMin(canvas);
         drawSec(canvas);
 
+        canvas.drawText("H : M : S", 35, (int)Math.round(barHeight * .25), textPaint);
         postInvalidateDelayed(500);
         invalidate();
     }
