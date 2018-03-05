@@ -49,6 +49,7 @@ public class myCanvas extends View {
 
     private void init() {
         paint = new Paint();
+        paint.setStyle(Paint.Style.FILL);
         screenWidth = getWidth();
         screenHeight = getHeight();
         barWidth = (screenWidth) / 3;
@@ -112,8 +113,6 @@ public class myCanvas extends View {
         paint.reset();
         getColour(sec);
         paint.setColor(rgb(red, green, blue));
-        paint.setStrokeWidth(5);
-        paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
         canvas.drawRect(2*barWidth, 0,3*barWidth, barHeight, paint);
     }
@@ -122,8 +121,6 @@ public class myCanvas extends View {
         paint.reset();
         getColour(min);
         paint.setColor(rgb(red, green, blue));
-        paint.setStrokeWidth(5);
-        paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
         canvas.drawRect(barWidth, 0, 2*barWidth, barHeight, paint);
     }
@@ -132,8 +129,6 @@ public class myCanvas extends View {
         paint.reset();
         getColour(hour * 5);
         paint.setColor(rgb(red, green, blue));
-        paint.setStrokeWidth(5);
-        paint.setStyle(Paint.Style.FILL);
         paint.setAntiAlias(true);
         canvas.drawRect(0, 0, barWidth, barHeight, paint);
 
